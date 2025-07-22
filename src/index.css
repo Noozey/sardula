@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sardula Gym Design System - Dark theme with vibrant energy accents */
+
+@layer base {
+  :root {
+    --background: 220 15% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 9%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 220 15% 11%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 14 90% 53%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 220 15% 14%;
+    --secondary-foreground: 0 0% 92%;
+
+    --muted: 220 15% 16%;
+    --muted-foreground: 0 0% 68%;
+
+    --accent: 24 95% 58%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 16%;
+    --ring: 14 90% 53%;
+
+    /* Modern Sardula Gym Design Tokens */
+    --gym-primary: 14 90% 53%;
+    --gym-primary-light: 14 85% 60%;
+    --gym-secondary: 24 95% 58%;
+    --gym-dark: 220 18% 6%;
+    --gym-surface: 220 16% 10%;
+    --gym-surface-elevated: 220 15% 14%;
+    --gym-surface-overlay: 220 14% 18%;
+    
+    /* Sophisticated Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(14 90% 53%), hsl(24 95% 58%));
+    --gradient-surface: linear-gradient(145deg, hsl(220 16% 10%), hsl(220 15% 14%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 18% 6% / 0.95), hsl(14 90% 53% / 0.08));
+    --gradient-card: linear-gradient(145deg, hsl(220 16% 10% / 0.8), hsl(220 15% 14% / 0.6));
+    
+    /* Modern Shadows */
+    --shadow-sm: 0 2px 8px hsl(220 18% 6% / 0.3);
+    --shadow-md: 0 8px 24px hsl(220 18% 6% / 0.4);
+    --shadow-lg: 0 16px 48px hsl(220 18% 6% / 0.5);
+    --shadow-glow: 0 0 32px hsl(14 90% 53% / 0.3);
+    --shadow-button: 0 4px 16px hsl(14 90% 53% / 0.4);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Modern Button Variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[var(--shadow-button)] hover:brightness-110 active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary/80 backdrop-blur-sm text-secondary-foreground font-medium px-6 py-3 rounded-lg border border-border/50 transition-all duration-300 hover:bg-secondary hover:border-primary/30 hover:shadow-[var(--shadow-sm)];
+  }
+  
+  /* Modern Card Components */
+  .card-modern {
+    @apply bg-gradient-to-br from-card via-card to-gym-surface-elevated border border-border/60 rounded-2xl p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[var(--shadow-md)] hover:-translate-y-1 backdrop-blur-sm;
+  }
+  
+  .card-feature {
+    @apply bg-gradient-to-br from-gym-surface via-gym-surface-elevated to-gym-surface-overlay border border-border/40 rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-[var(--shadow-lg)] group;
+  }
+  
+  /* Typography */
+  .text-gradient-modern {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+  
+  /* Navigation */
+  .nav-glass {
+    @apply bg-background/80 backdrop-blur-md border-b border-border/40;
+  }
+  
+  /* Hero Section */
+  .hero-modern {
+    background: var(--gradient-hero);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Section Backgrounds */
+  .section-elevated {
+    @apply bg-gradient-to-br from-gym-surface via-gym-surface-elevated to-gym-surface;
+  }
+}
